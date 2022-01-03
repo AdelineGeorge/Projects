@@ -1,0 +1,54 @@
+ <!-- <div *ngIf="isAvailable">
+<google-chart #chart
+   [title]="chartData.tweetCountData.title"
+   [type]="chartData.tweetCountData.type"
+   [data]="chartData.tweetCountData.data"
+   [width]="chartData.tweetCountData.width"
+   [height]="chartData.tweetCountData.height">
+</google-chart>
+<ng-container *ngFor="let country of chartData.countryVaccineCount | keyvalue">
+
+ <google-chart #chart
+   [title]="country.value.title"
+   [type]="country.value.type"
+   [data]="country.value.data"
+   [options] = "country.value.options"
+   [width]="country.value.width"
+   [height]="country.value.height">
+</google-chart> 
+</ng-container>
+</div> -->
+<div class="card" style="margin-top: 4%;width: 100%;height: 100%;">
+   <div class="card-body">
+   <h2 style="text-align: center;">Result-based Analytics</h2>
+<ng-container *ngIf="analyticsData$ | async as chartData">
+   <ng-container *ngIf="chartData.countryData.data.length !== 0">
+   <google-chart #chart
+   [title]="chartData.countryData.title"
+   [type]="chartData.countryData.type"
+   [data]="chartData.countryData.data"
+   [width]="chartData.countryData.width"
+   [height]="chartData.countryData.height">
+</google-chart>
+</ng-container>
+<ng-container *ngIf="chartData.languageData.data.length !== 0">
+<google-chart #chart
+       [title]="chartData.languageData.title"
+       [type]="chartData.languageData.type"
+       [data]="chartData.languageData.data"
+       [width]="chartData.languageData.width"
+       [height]="chartData.languageData.height">
+    </google-chart>
+   </ng-container>
+   <ng-container *ngIf="chartData.sentimentData.data.length !== 0">
+    <google-chart #chart
+       [title]="chartData.sentimentData.title"
+       [type]="chartData.sentimentData.type"
+       [data]="chartData.sentimentData.data"
+       [width]="chartData.sentimentData.width"
+       [height]="chartData.sentimentData.height">
+    </google-chart>
+   </ng-container>
+ </ng-container>
+</div>
+</div>

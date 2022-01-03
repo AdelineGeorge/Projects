@@ -1,0 +1,29 @@
+<!-- <app-nav-bar></app-nav-bar> -->
+<!-- <p>results!</p> -->
+<ng-container *ngIf="resultsAvailable$ | async ; else elseBlock">
+ <ng-container *ngIf="queryResults$ | async as queryResults">
+    <ng-container *ngFor="let tweet of queryResults">
+    <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+      <div class="d-flex w-100 justify-content-between">
+        <!-- <ng-container *ngIf="tweet.verified"><h5 class="mb-1">List group item heading</h5></ng-container> -->
+        <ng-container><h4 class="mb-1">{{tweet.id}}</h4><i class="bi bi-patch-check-fill"></i></ng-container>
+        
+        <small>{{tweet.time_ago}}</small>
+      </div>
+      <p class="mb-1" style="font-size: 125%;">{{tweet.tweet_text}}</p>
+      <span *ngIf="tweet.sentiment == 'positive'" style="font-size: 100%;" class="badge bg-success">Positive</span>
+      <span *ngIf="tweet.sentiment == 'negative'" style="font-size: 100%;" class="badge bg-danger">Negative</span>
+      <span *ngIf="tweet.sentiment == 'neutral'" style="font-size: 100%;" class="badge bg-warning text-dark">Neutral</span>
+      <span *ngIf="tweet.verified" style="font-size: 100%;" class="badge bg-success">Verified</span>
+    </a>
+    </ng-container>
+  </ng-container>
+</ng-container>
+
+    <ng-template #elseBlock> <div class="card" style="margin-top: 0.5%; width: 50em;height: 100%;">
+      <div class="card-body">
+        <h3 class="card-title">Search For a Query! </h3>
+      </div>
+    </div></ng-template>
+ 
+ 

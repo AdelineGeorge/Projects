@@ -1,0 +1,42 @@
+<!-- <button (click) = "sayHi()">Click me!</button>
+<h1>{{serverData.text}}</h1> -->
+     
+  <!-- <div class="topnav">
+    <div class="search-container">
+        <input type="text" placeholder="Search.." [(ngModel)]="queryVal">
+        <button  (click)="search()">Submit</button>
+    </div>
+  </div>  
+  -->
+
+<div class="card" style="margin-top: 4%">
+  <div class="card-body">
+    <div class="pt-5 bg-white">
+    <img style="margin-left: 35%;" src="/assets/twirank1.png" alt="image">
+    <div class="pt-5 bg-white">
+      <div class="container-xxl pt-5 pb-5 bg-light">
+      <form role="form" class="row">
+        <div class="d-grid gap-4">
+        <div class="form-group offset-2 col-lg-8">
+            <input type="text" class="form-control" name="queryVal" [(ngModel)]="queryVal">
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col text-center">
+              <button class="btn btn-primary btn-lg col-lg-1" routerLink="/searchresults" (click)="search()">Search</button>
+            </div>
+          </div>
+        </div>
+        
+    
+        
+      </div>
+      </form>
+      </div>
+      </div>
+    
+  </div>
+  </div>
+  
+
+  <router-outlet></router-outlet>

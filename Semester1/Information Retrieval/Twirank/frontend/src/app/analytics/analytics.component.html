@@ -1,0 +1,116 @@
+<app-nav-bar name = "Home"></app-nav-bar>
+<ng-container *ngIf="analyticsData$ | async as chartData">
+  <div class="flex-container">
+  <div class="flex-items">
+    <google-chart #chart
+       [title]="chartData.tweetCountData.title"
+       [type]="chartData.tweetCountData.type"
+       [data]="chartData.tweetCountData.data"
+       [width]="chartData.tweetCountData.width"
+       [height]="chartData.tweetCountData.height">
+    </google-chart>
+  </div>
+  <div class="flex-items" style="margin-left: 15%;">
+    <div class="card" style="    margin-top: 4%;text-align: center;">
+      <div class="card-body">
+        <h2 class="card-title">Top 5 POI's who tweet persuasive tweets towards vaccines</h2>   
+   <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Number of Most persuasive towards Covid Vaccines tweets</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>CDCgov</td>
+          <td>362</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>MoHFW_INDIA</td>
+          <td>131</td>
+        </tr>
+        <tr>
+         <th scope="row">3</th>
+         <td>POTUS</td>
+         <td>118</td>
+       </tr>
+       <tr>
+         <th scope="row">4</th>
+         <td>narendramodi</td>
+         <td>36</td>
+       </tr>
+       <tr>
+         <th scope="row">5</th>
+         <td>LeaderMcConnell</td>
+         <td>23</td>
+       </tr>
+      </tbody>
+    </table>
+   </div>
+   </div>
+  </div>
+</div>
+    <div class="card" style="margin-top: 4%">
+      <div class="card-body">
+        <h2 class="card-title" style="text-align: center;">Country-wise Vaccine Preferences</h2>
+    <div class="flex-container">
+    <ng-container *ngFor="let country of chartData.countryVaccineCount | keyvalue">
+      
+         <div class="flex-items">
+            <google-chart #chart
+       [title]="country.value.title"
+       [type]="country.value.type"
+       [data]="country.value.data"
+       [options] = "country.value.options"
+       [width]="country.value.width"
+       [height]="country.value.height">
+    </google-chart> 
+   </div>
+   </ng-container>
+   </div>
+   <h2 class="card-title" style="text-align: center;">Country-Wise % of tweets which is for and against Vaccines!</h2>
+   <div class="flex-container">
+    <ng-container *ngFor="let country of chartData.vaccineforandagainst | keyvalue">
+      
+         <div class="flex-items">
+            <google-chart #chart
+       [title]="country.value.title"
+       [type]="country.value.type"
+       [data]="country.value.data"
+       [options] = "country.value.options"
+       [width]="country.value.width"
+       [height]="country.value.height">
+    </google-chart> 
+  </div>
+  </ng-container>
+   </div>
+
+</div>
+</div> 
+<div class="flex-container">
+  
+    <div class="flex-items">
+
+      <google-chart #chart
+      [title]="chartData.covidtweetsByPOI.title"
+      [type]="chartData.covidtweetsByPOI.type"
+      [data]="chartData.covidtweetsByPOI.data"
+      [options] = "chartData.covidtweetsByPOI.options"
+      [width]="chartData.covidtweetsByPOI.width"
+      [height]="chartData.covidtweetsByPOI.height">
+      </google-chart>
+    </div>
+  
+</div>
+<div class="card" style="margin-top: 4%">
+  <div class="card-body">
+    <h2 class="card-title" style="text-align: center;">Time Series Chart indicating POI Tweets</h2>
+    <img style="margin-left: 15%;" src="/assets/newplot.png" alt="image">
+  </div>
+  </div>
+</ng-container>
+

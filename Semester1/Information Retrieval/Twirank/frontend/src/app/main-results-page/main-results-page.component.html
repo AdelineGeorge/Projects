@@ -1,0 +1,66 @@
+<!-- <div class="parent">
+    <div class="div1"> </div>
+    <div class="div2"> 
+        <app-nav-bar></app-nav-bar>
+    </div>
+    <div class="div3">
+        <app-filters></app-filters> 
+    </div>
+    <div class="div4"> 
+        <app-results-page></app-results-page>
+    </div>
+    <div class="div5"> </div>
+    <div class="div6"> 
+        <app-query-based-analytics></app-query-based-analytics>
+    </div>
+</div> 
+<div class="parent">
+    <div class="div1"> 
+        <app-nav-bar></app-nav-bar>
+    </div>
+    <div class="div2">
+        <app-filters></app-filters> 
+     </div>
+    <div class="div3"> 
+        <app-results-page></app-results-page>
+    </div>
+    <div class="div4"> 
+        <app-query-based-analytics></app-query-based-analytics>
+    </div>
+</div> 
+-->
+
+ <!-- <div class="container">
+    
+    <div class="nav">
+        <app-nav-bar></app-nav-bar>
+    </div>
+    
+    
+    <div class="results">
+        <app-results-page></app-results-page>
+    </div>
+    <div class="charts">
+        <app-query-based-analytics></app-query-based-analytics>
+    </div>
+    <div class="filters">
+        <app-filters></app-filters> 
+    </div>
+</div> -->
+
+<style>
+    .cardList {
+      display: flex;
+      flex-direction: row;
+    }
+    /* Row Gap */
+    .cardList > *:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  </style>
+  <app-nav-bar name = "Analytics"></app-nav-bar>
+  <div class="cardList">
+    <app-filters style="width:20%"></app-filters> 
+    <app-results-page style="width:45%"></app-results-page>
+    <app-query-based-analytics style="width:30%"></app-query-based-analytics>
+  </div>

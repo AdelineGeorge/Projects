@@ -1,0 +1,9 @@
+.myclass {
+    margin-top: 4%;
+}
+:host(.myclass){
+    width: 90%;
+    margin-top: 0.75%;
+    margin-left: 2%;
+    margin-right: 2%;
+  }

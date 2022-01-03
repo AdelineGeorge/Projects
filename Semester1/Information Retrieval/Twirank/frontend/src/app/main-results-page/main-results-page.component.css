@@ -1,0 +1,54 @@
+/* .container {
+    display: grid;
+    grid-template-columns: 20% 1fr 1fr;
+    grid-template-rows: 0.5fr 1.7fr 0.3fr;
+    grid-template-areas:
+      "nav nav nav nav nav"
+      "filters results results results charts"
+      "filters results results results charts";
+  }
+  
+app-filters { grid-area: filters; }
+
+app-results-page { grid-area: results; }
+
+app-query-based-analytics { grid-area: charts; }
+
+app-nav-bar { grid-area: nav; }
+   */
+
+/* .flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: normal;
+  align-items: normal;
+  align-content: normal;
+}
+
+.flex-items:nth-child(1) {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+
+.flex-items:nth-child(2) {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+
+.flex-items:nth-child(3) {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+} */
